@@ -116,16 +116,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
 export PATH=$PATH:$JAVA_HOME/bin
 export PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] ▶\[\033[0m\] '
 
-export PATH=/home/unixia/bin:/home/unixia/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:/home/unixia/.buildozer/android/platform/android-sdk-20/platform-tools/
+export PATH=/home/unixia/bin:/home/unixia/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/unixia/packages/yay/pkg/yay/usr/bin:/home/unixia/.cargo/bin
 
 shopt -s extglob
 
 alias va="source venv/bin/activate"
 alias pt="pytest -s --ignore=./venv/ --ignore=./activate/"
 alias g="git"
+alias mcd="mkdir $1 | !$"
 
 ssh-add ~/.ssh/id_rsa &>/dev/null
+
+source ~/.bash_git
+source ~/.git-completion
