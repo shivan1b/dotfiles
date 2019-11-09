@@ -132,3 +132,14 @@ ssh-add ~/.ssh/id_rsa &>/dev/null
 
 source ~/.bash_git
 source ~/.git-completion
+
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_prompt_command
+fi
+
+gcpr()
+{
+    git fetch upstream pull/$1/head:$2;
+    git checkout $2
+}
